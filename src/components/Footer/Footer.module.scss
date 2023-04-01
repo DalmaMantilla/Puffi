@@ -1,0 +1,123 @@
+@import "../../styles/_mixins";
+@import "../../styles/variables.scss";
+
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    min-height: 17vw;
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.329);
+
+    @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include breakpoint(xl) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    @include breakpoint(lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+ 
+    & h1 {
+        font-size: 4.5vmin;
+        margin-left: 1.5em;
+        font-family: $font-chela;
+        color: $text3;
+    }
+
+
+    &__card {
+        margin: 3.5em 0 auto 0;
+        min-height: 10em;
+        border-right: 0.1px solid #4d4b4b7e;
+        font-size: 1.6vmin;
+        letter-spacing: 0.15em;
+
+        &:nth-child(5) {
+            border-right: none;
+        }
+
+        @include breakpoint(lg) {
+            &:nth-child(2) {
+                border-right: none;
+            }
+            &:nth-child(4) {
+                border-right: none;
+            }
+        }
+     
+    }
+
+
+    &__text {
+        line-height: 2.5em;
+        margin: auto 4em auto 4em;
+    }
+
+
+    &__buy {
+        @include flex(row, nowrap, center, center);
+        margin: auto 4em auto 4em;
+        font-size: 1.4vmin;
+        gap: 0.8em;
+        
+        & svg {
+            width: 7em;
+            height: 7em;
+        }
+    }
+
+
+    &__rrss {
+        @include flex(row, nowrap, left, center);
+        gap: 0.8em;
+
+        & svg {
+            width: 2em;
+            height: 2em;
+        }
+    }
+
+
+    &__copyright {
+        border-top: 0.1px solid #4d4b4b7e;
+        margin: auto 3.5em auto 3.5em;
+        padding-top: 0.8em;
+        font-size: 2vmin;
+        grid-column: 1/6;
+        @include flex(row, nowrap, space-between, center);
+
+
+        @include breakpoint(md) {
+            grid-column: 1/2;
+        }
+
+      
+        @include breakpoint(xl) {
+            grid-column: 1/4;
+        }
+
+        @include breakpoint(lg) {
+            grid-column: 1/3;
+        }
+
+        & span {
+            color: red;
+            font-weight: bold;
+        }
+        
+        & h1 {
+            @include flex(row, nowrap, center, center);
+            font-size: 2.2vmin;
+        }
+        
+        & svg {
+            width: 1.1em;
+            height: 1.1em;
+        }
+    }
+
+}

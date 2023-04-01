@@ -1,0 +1,113 @@
+@import "../../styles/_mixins";
+@import "../../styles/variables.scss";
+
+
+.container {
+    min-height: 60vw;
+    text-align: center;
+    padding: 1em 0 1em 0;
+    @include flex(column, wrap, center, center);
+
+    & h1 {
+        font-size: 6vmin;
+        margin: 0.3em 0 0.3em 0;     
+    }
+
+    & h2 {
+        color: $text1;
+        font-size: 3.5vmin;
+    }
+
+    & h5 {
+        font-size: 2vmin;
+        color: $text2;
+        letter-spacing: 0.1em;
+    }
+
+    & p {
+        font-size: 2.1vmin;
+    }
+
+
+    &__instagram {
+        padding: 3.5em 0;
+    }
+
+
+    &__containerCards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include breakpoint(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint(sm) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+
+        &__subscribe {
+            padding: 5.5em 0 1.3em 0;
+            //min-height: 10em;
+            grid-column: 1/4;
+
+            @include breakpoint(md) {
+                grid-column: 1/3;
+            }
+    
+            @include breakpoint(sm) {
+                grid-column: 1/2;
+            }
+        }
+
+
+        &__form {
+            grid-column: 1/4;
+            padding-bottom: 5.625em;
+           
+            @include breakpoint(md) {
+                grid-column: 1/3;
+            }
+    
+            @include breakpoint(sm) {
+                grid-column: 1/2;
+            }
+        }
+    }
+
+    
+    &__card {
+        height: 12em; 
+        width: 12em;
+        border: 0.1em solid rgb(255, 255, 255);
+        position: relative;
+
+        &:hover > &__overlay {
+            height: 100%;
+            cursor: pointer;
+        }
+       
+        
+        & img {
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+        }
+
+
+        &__overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background:rgba(51, 132, 182, 0.781) ;
+            width: 100%; /*Toma el 100% de su padre*/
+            //height: 100%; /*Toma el 100% de su padre*/
+            height: 0%;
+            overflow: hidden;
+            transition: 1s ease;
+            @include flex(row, nowrap, center, center);
+        }
+    }
+
+}

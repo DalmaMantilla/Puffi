@@ -1,0 +1,58 @@
+@import "../../styles/_mixins";
+
+.center {
+  @include flex(column, nowrap, center, center);
+  gap: 140px;
+
+  @include breakpoint(md) {
+    gap: 40px;
+  }
+
+  &__h1 {
+    text-align: center;
+    text-shadow: .1875rem .1875rem .1875rem rgb(54, 53, 53);
+    font-size: 7.5vmin;
+
+    @include breakpoint(md) {
+      font-size: 6.5vw;
+    }
+  
+    @include breakpoint(lg) {
+      font-size: 5vw;
+    }
+  
+  }
+     
+  &__button {
+    @include button-hover;
+  }
+
+      
+/*-----------------------------Radio Buttons--------------------------------------*/
+  &__radiobutton {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    margin: 1em;
+
+    @include breakpoint(md) {
+      font-size: 1.5vmin;
+    }
+  
+    & > input[type="radio"] {
+      width: 0.75em;
+      height: 0.75em;
+      border-radius:50%;
+      background: rgb(255, 255, 255);
+    }
+
+
+    & > input[type="radio"]:checked {
+      padding: 0.5em;
+      background-image: radial-gradient(rgb(255, 255, 255) 0%, rgb(255, 255, 255) 40%, transparent 50%, transparent);
+      border: solid 1px rgb(255, 255, 255);
+      background-color: rgba(245, 245, 220, 0);
+    }
+  }
+
+}

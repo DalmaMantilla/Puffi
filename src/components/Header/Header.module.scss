@@ -1,0 +1,261 @@
+@import "../../styles/_mixins";
+@import "../../styles/variables.scss";
+
+
+.header {
+  min-height: 55vw;
+  padding: 15rem 2.8em 0em 2.8em;
+  background: url("../../../public/bg/fondo.jpg") no-repeat center center /cover;
+  color: $text1;
+  position: relative;
+  z-index: 10; 
+  @include flex(column, nowrap, center, center);
+
+
+  @include breakpoint(md) {
+    @include flex(column, nowrap, flex-end, center);
+    padding: 0em 2.8em 0em 2.8em;
+  }
+
+  @include breakpoint(lg) {
+    font-size: .8313rem;
+  }
+
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(9, 29, 41, 1) , rgba(0, 0, 0, 0)); 
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1; 
+  }
+
+
+  &__div {
+    @include flex(row, nowrap, center, center);
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    padding: 2.4rem 2.8em 0em 2.8em;
+    transition: 0.8s linear 0.1s;
+ 
+    @media screen and (min-width: 770px) {
+      &--off {
+        transform: translateY(-300px); 
+      }
+    }
+  
+  }
+
+
+  &__menu {
+    @include flex(row, nowrap, space-between, flex-start);
+    padding: 2.4em 2.8em 0em 2.8em;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.8s linear 0.1s;
+
+    @include breakpoint(lg) {
+      padding: 2.9em 2.8em 0em 2.8em;
+    }
+   
+    @include breakpoint(md) {
+      padding: .187em .937em;
+    }
+
+    @media screen and (min-width: 770px) {
+      &--off {
+        transform: translateY(-300px);
+      }
+  
+      &--solid { 
+        height: 17%;
+        background: linear-gradient(rgb(15, 37, 50), rgb(92, 124, 169));
+      }  
+   }
+  }
+
+
+  /*----------------------------------Navbar-------------------------------------------*/
+  &__ul {
+    @include flex(row, nowrap, space-between, center);
+    
+    @include breakpoint(md) {
+      flex-direction: column;
+      padding: 0.9rem 0; 
+    }
+  }
+
+
+  &__li {
+    border-right: 1px solid #f1e8e8;
+    padding: 0 .9375em;
+   
+    &:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    &:nth-child(1) { /*first-child{}*/
+      padding-left: 0
+    }
+
+    @include breakpoint(md) {
+      border-right:none;
+ 
+      &:last-child {
+        padding-right: .9375em;
+      }
+  
+      &:nth-child(1) {
+        padding-left: .9375em;
+      }
+    }
+  }
+
+
+  &__a {
+    text-transform: uppercase;
+    font-weight: bold;
+    gap: .625em;
+    cursor: pointer;
+
+    @include flex(column, nowrap, center, center);
+
+    & > svg {
+      width: 2.1em;
+      height: 2.1em;
+      cursor: pointer;
+    }
+
+    &:hover {
+      color: $hover;
+      transform: scale(105%);
+      transition: 0.5s ease-in-out;
+    }
+
+  }
+
+
+  /*-----------------------------Toogler & logo-----------------------------------------*/
+  &__logo {
+    font-size: 6.5vmin;
+    font-family: $font-chela;
+    color: $text1;
+    margin-top: -0.4375rem; //quito espacio vacio h1
+    
+    @include breakpoint(md) {
+      margin-top: auto;
+    }
+  }
+
+
+  &__toogler {
+    display: none;
+
+    @include breakpoint(md) {
+        display: block;
+    }
+  
+    & > svg {
+      font-size: 7vmin;
+      color: white;
+      cursor: pointer;
+      margin: auto -0.4063rem; //quita espacio vacio en svg
+      
+      &:hover {
+        color: $hover;
+        transform: scale(105%);
+        transition: 0.5s ease-in-out;
+      }
+    }
+  }
+ 
+  
+  /*--------------------------------------Cuenta & Compra----------------------------------*/  
+  &__acc {
+    font-size: .65em;
+    letter-spacing: .160em;
+    @include flex(row, nowrap, space-between, center);
+
+    &:hover {
+      color: $hover;
+    }
+
+    & > svg {
+      margin-left: .46rem;
+      stroke-width: .06em; //anchura del trazo
+
+      &:hover {
+        color: $hover;
+        transform: rotate(90deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+      }
+    }
+  }
+
+
+  &__account {
+
+    @include breakpoint(md) {
+      display: none;
+    }
+  
+  }
+
+
+  /*-----------------------------------Navbar-------------------------------*/
+  &__nav {
+    right: -100%;
+
+    @include breakpoint(md) {
+      width: 100%;
+      height: 30%;
+
+      top: 7%;
+      font-size: 2vmin;
+
+      @include flex(column, nowrap, center, center);
+
+      position:fixed;
+      overflow: hidden;
+    }
+    
+    @include breakpoint(sm) {
+      top: 5%;
+      height: 24%;
+    }
+
+
+    &__account {
+      display: none;
+      padding: .6em;
+
+      & > li {
+        border-right: 1px solid #f1e8e8;
+      }
+
+      @include breakpoint(md) {
+        display: block;
+
+        @include flex(row, nowrap, center, center);
+      }
+    }
+
+
+    &--open {
+      background: rgba($bg1, 1);
+      right: 0; 
+      transition: 0.4s ease right;
+    }
+  }
+
+
+}
