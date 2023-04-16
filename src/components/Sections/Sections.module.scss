@@ -91,31 +91,21 @@
 
 	&__triangle {
 		position: absolute;
-		width: 1.5%;
-		height: 1.5%;
-
 		right: 50%;
 		z-index: 1;
-		width: 0;
-		height: 0;
-        border-top: 13px solid transparent;
-        border-right: 15px solid rgb(242, 240, 240);
-        border-bottom: 13px solid transparent;
+		border-top: 1vw solid transparent;
+        border-right: 1.2vw solid rgb(242, 240, 240);
+        border-bottom: 1vw solid transparent;
 	}
 	
 
 	&__triangle2 {
 		position: absolute;
-		width: 1.5%;
-		height: 1.5%;
-
 		left: 50%;
 		z-index: 1;
-		width: 0;
-		height: 0;
-        border-top: 13px solid transparent;
-        border-left: 15px solid rgb(255, 255, 255);
-        border-bottom: 13px solid transparent;
+        border-top: 1vw solid transparent;
+        border-left: 1.2vw solid rgb(255, 255, 255);
+        border-bottom: 1vw solid transparent;
 	}
 }
 

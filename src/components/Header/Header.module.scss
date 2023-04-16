@@ -3,7 +3,7 @@
 
 
 .header {
-  min-height: 60vw;
+  min-height: 55vw;
   padding: 15rem 2.8em 0em 2.8em;
   background: url("../../../public/bg/fondo.jpg") no-repeat center center /cover;
   color: $text1;
@@ -14,7 +14,7 @@
 
   @include breakpoint(md) {
     @include flex(column, nowrap, flex-end, center);
-    padding: 0em 2.8em 0em 2.8em;
+    padding: 4em 2.8em 0em 2.8em;
   }
 
   @include breakpoint(lg) {
@@ -62,12 +62,13 @@
     transition: 0.8s linear 0.1s;
 
     @include breakpoint(lg) {
-      padding: 2.9em 2.8em 0em 2.8em;
+      //padding: 2.9em 2.8em 0em 2.8em;
+      padding: 1.5em;
     }
    
     @include breakpoint(md) {
       z-index: 10;
-      padding: .187em .937em;
+      //padding: .187em .937em;
     }
 
     @media screen and (min-width: 770px) {
@@ -89,7 +90,7 @@
     
     @include breakpoint(md) {
       flex-direction: column;
-      padding: 2rem 0; 
+      padding-bottom: 2rem; 
       gap: 3em;
     }
   }
@@ -98,6 +99,7 @@
   &__li {
     border-right: 1px solid #f1e8e8;
     padding: 0 .9375em;
+    
    
     &:last-child {
       border-right: none;
@@ -143,9 +145,8 @@
     }
 
     @include breakpoint(md) {
-      font-size: 1.4em;
+      font-size: 1.3rem;
     }
-
 
   }
 
@@ -187,8 +188,8 @@
   
   /*--------------------------------------Cuenta & Compra----------------------------------*/  
   &__acc {
-    font-size: .65em;
-    letter-spacing: .160em;
+    font-size: 1.4vmin;
+    letter-spacing: .165em;
     @include flex(row, nowrap, space-between, center);
 
     &:hover {
@@ -196,7 +197,7 @@
     }
 
     & > svg {
-      margin-left: .46rem;
+      margin-left: .46rem; //separa mi cuenta de flecha abajo
       stroke-width: .06em; //anchura del trazo
 
       &:hover {
@@ -210,40 +211,32 @@
     @include breakpoint(md) {
       font-size: 1.3em;
     }
+   
   }
 
 
   &__account {
-
+  
     @include breakpoint(md) {
       display: none;
     }
-  
+    
   }
-
 
   /*-----------------------------------Navbar-------------------------------*/
   &__nav {
     right: -100%;
 
     @include breakpoint(md) {
-      width: 100%;
-      height: 30%;
-    
-      top: 7%;
-      font-size: 2vmin;
-
+      
       @include flex(column, nowrap, center, center);
-
+      
+      font-size: 2.5vmin;
       position:fixed;
       overflow: hidden;
     }
     
-    @include breakpoint(sm) {
-      top: 5%;
-      height: 24%;
-    }
-
+   
 
     &__account {
       display: none;
