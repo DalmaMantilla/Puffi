@@ -10,7 +10,6 @@
 	
 	&__imgCard {
 		@include flex(row, nowrap, center, center);
-
 		//background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../public/img/pufiRain.jpeg") no-repeat center center /cover;
 		background:  no-repeat center center /cover;
 		color: $text1;
@@ -91,37 +90,34 @@
 
 
 	&__triangle {
-		background:  rgb(242, 240, 240);
 		position: absolute;
 		width: 1.5%;
 		height: 1.5%;
 
-		right: 48.7%;
+		right: 50%;
 		z-index: 1;
-	
-		-webkit-transform: rotate(45deg);
-		-moz-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-		transform: rotate(45deg);
+		width: 0;
+		height: 0;
+        border-top: 13px solid transparent;
+        border-right: 15px solid rgb(242, 240, 240);
+        border-bottom: 13px solid transparent;
 	}
 	
 
 	&__triangle2 {
-		background:  rgb(255, 255, 255);
 		position: absolute;
 		width: 1.5%;
 		height: 1.5%;
 
-		right: 49.8%;
+		left: 50%;
 		z-index: 1;
-	
-		-webkit-transform: rotate(45deg);
-		-moz-transform: rotate(45deg);
-		-ms-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-		transform: rotate(45deg);
+		width: 0;
+		height: 0;
+        border-top: 13px solid transparent;
+        border-left: 15px solid rgb(255, 255, 255);
+        border-bottom: 13px solid transparent;
 	}
 }
 
 		
+

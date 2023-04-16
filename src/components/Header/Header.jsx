@@ -95,13 +95,15 @@ export const Header = () => {
                 <nav className={`${styles.header__nav} ${menuOpen ? styles[`header__nav--open`] : {}}`}>
                     <ul className={styles.header__ul}>
                         { linksNav.map(( {id, link, icono}) =>   
-                            <li className={styles.header__li} key={id}>
+                            <li className={styles.header__li}
+                                 key={id}>
                                 <div 
                                     className={styles.header__a}
                                     key={id}
                                 >
                                     <Link 
                                         className={styles.header__a}
+                                        onClick={() => setMenuOpen(!menuOpen)}
                                         to={link} 
                                         smooth 
                                         duration={450}
@@ -109,6 +111,7 @@ export const Header = () => {
                                         {icono}
                                     </Link>
                                     <Link 
+                                        onClick={() => setMenuOpen(!menuOpen)}
                                         to={link} 
                                         smooth 
                                         duration={450}

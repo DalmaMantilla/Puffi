@@ -3,10 +3,10 @@ import React from 'react'
 import styles from '../Sections/Sections.module.scss';
 import { AiOutlineDown } from "react-icons/ai";
 
-import  pufiPuff  from '../../images/pufiPuff.png';
-import  pufiRain  from '../../images/pufiRain.png';
-import  pufiCart  from '../../images/pufiCart.png';
-import  pufiNap  from '../../images/pufiNap.png';
+import  pufiPuff  from '../../images/pufiPuff.jpg';
+import  pufiRain  from '../../images/pufiRain.jpg';
+import  pufiCart  from '../../images/pufiCart.jpg';
+import  pufiNap  from '../../images/pufiNap.jpg';
 
 
 
